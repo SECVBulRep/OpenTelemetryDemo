@@ -1,0 +1,3 @@
+docker-compose -f docker-compose-redis-only.yml up -d
+docker-compose -f docker-compose-rabbitmq-only.yml up -d
+http://localhost:15672 - rbtmq console
