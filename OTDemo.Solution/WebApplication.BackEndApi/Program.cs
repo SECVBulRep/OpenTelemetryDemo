@@ -1,10 +1,18 @@
 using MassTransit;
+using Serilog;
 using Weather.Libs.Services;
 using WebApplication.BackEndApi;
 using WebApplication.BackEndApi.Consumers;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .CreateLogger();
+
+builder.Services.AddSerilog();
 // Add services to the container.
 
 builder.Services.AddControllers();

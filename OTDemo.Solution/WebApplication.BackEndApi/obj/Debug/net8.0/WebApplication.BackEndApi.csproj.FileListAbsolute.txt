@@ -55,3 +55,14 @@ C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\M
 C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\MassTransit.Abstractions.dll
 C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll
 C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\WebApplication.BackEndApi\bin\Debug\net8.0\System.Text.Json.dll
