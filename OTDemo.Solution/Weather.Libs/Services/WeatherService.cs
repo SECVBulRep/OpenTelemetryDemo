@@ -67,7 +67,9 @@ public class WeatherService
         if (cachedWeatherData.HasValue)
         {
             _logger.LogInformation("GetWeatherByCityAsync to {@city} got from cache",city);
-            return BsonSerializer.Deserialize<WeatherData>(cachedWeatherData.ToString());
+            var result =  BsonSerializer.Deserialize<WeatherData>(cachedWeatherData.ToString());
+            _logger.LogInformation("weather by city {city} is {@result}",city,result);
+            return result;
         }
         
         var filter = Builders<WeatherData>.Filter.Eq(w => w.City, city);
@@ -79,6 +81,7 @@ public class WeatherService
             _logger.LogInformation("GetWeatherByCityAsync to {@city} saved in cache",city);
           
         }
+        _logger.LogInformation("weather by city {city} is {@weatherData}",city,weatherData);
         return weatherData;
     }
 
@@ -90,7 +93,8 @@ public class WeatherService
         if (cachedWeatherData.HasValue)
         {
             _logger.LogInformation("GetAllCitiesAsync got from cache");
-            return BsonSerializer.Deserialize<List<WeatherData>>(cachedWeatherData.ToString());
+            var result =  BsonSerializer.Deserialize<List<WeatherData>>(cachedWeatherData.ToString());
+            return result;
         }
 
         
