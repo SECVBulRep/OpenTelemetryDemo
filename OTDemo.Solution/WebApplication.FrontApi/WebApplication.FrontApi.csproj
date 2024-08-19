@@ -7,7 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.4" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Weather.Libs\Weather.Libs.csproj" />
     </ItemGroup>
 
 </Project>

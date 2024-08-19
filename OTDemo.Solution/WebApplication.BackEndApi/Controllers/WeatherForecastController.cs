@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Weather.Libs.Models;
+using Weather.Libs.Services;
 
 namespace WebApplication.BackEndApi.Controllers;
 
@@ -6,27 +8,29 @@ namespace WebApplication.BackEndApi.Controllers;
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+    private WeatherService _weatherService;
 
     private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, WeatherService weatherService)
     {
         _logger = logger;
+        _weatherService = weatherService;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    //[HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet("GetAll")]
+    public async Task<List<WeatherData>?> GetAll()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        var result = await _weatherService.GetAllCitiesAsync();
+        return result;
+    }
+    
+   // [HttpGet(Name = "GetWeatherForecastForCity")]
+   [HttpGet("GetByCity")]
+    public async Task<WeatherData?> GetByCity(string city)
+    {
+        var result = await _weatherService.GetWeatherByCityAsync(city);
+        return result;
     }
 }

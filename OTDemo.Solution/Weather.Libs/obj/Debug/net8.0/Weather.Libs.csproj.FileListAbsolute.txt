@@ -1,0 +1,13 @@
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\bin\Debug\net8.0\Weather.Libs.deps.json
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\bin\Debug\net8.0\Weather.Libs.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\bin\Debug\net8.0\Weather.Libs.pdb
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.csproj.AssemblyReference.cache
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.AssemblyInfoInputs.cache
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.AssemblyInfo.cs
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.csproj.CoreCompileInputs.cache
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.sourcelink.json
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\refint\Weather.Libs.dll
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\Weather.Libs.pdb
+C:\Work\.net\OTDemo\OTDemo.Solution\Weather.Libs\obj\Debug\net8.0\ref\Weather.Libs.dll
