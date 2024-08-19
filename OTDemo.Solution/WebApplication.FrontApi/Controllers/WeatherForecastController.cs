@@ -32,8 +32,6 @@ public class WeatherForecastController : ControllerBase
     public async Task<List<WeatherData>?> GetAllEventually()
     {
         var response = await _client.GetResponse<GetAllCitiesResponse>(new GetAllCitiesRequest());
-        
-       
         return response.Message.Data;
     }
     

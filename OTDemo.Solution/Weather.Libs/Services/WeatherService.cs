@@ -1,18 +1,22 @@
+using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using StackExchange.Redis;
 using Weather.Libs.Models;
+using ILogger = DnsClient.Internal.ILogger;
 
 namespace Weather.Libs.Services;
 
 public class WeatherService
 {
+    private ILogger<WeatherService> _logger;
     private readonly IMongoCollection<WeatherData> _weatherCollection;
     private readonly IDatabase _redisDatabase;
 
-    public WeatherService()
+    public WeatherService(ILogger<WeatherService> logger)
     {
+        _logger = logger;
         var client = new MongoClient("mongodb://admin:adminpassword@localhost:27017");
         var database = client.GetDatabase("WeatherDb");
         _weatherCollection = database.GetCollection<WeatherData>("WeatherData");
@@ -46,6 +50,8 @@ public class WeatherService
         }
 
         await _weatherCollection.InsertManyAsync(weatherDataList);
+        
+        _logger.LogInformation($"weather info generated!");
     }
 
     private string GenerateRandomCondition(Random random)
@@ -60,6 +66,7 @@ public class WeatherService
         var cachedWeatherData = await _redisDatabase.StringGetAsync(city);
         if (cachedWeatherData.HasValue)
         {
+            _logger.LogInformation("GetWeatherByCityAsync to {@city} got from cache",city);
             return BsonSerializer.Deserialize<WeatherData>(cachedWeatherData.ToString());
         }
         
@@ -68,7 +75,8 @@ public class WeatherService
         
         if (weatherData != null)
         {
-            await _redisDatabase.StringSetAsync(city, weatherData.ToJson(), TimeSpan.FromMinutes(30)); 
+            await _redisDatabase.StringSetAsync(city, weatherData.ToJson(), TimeSpan.FromMinutes(30));
+            _logger.LogInformation("GetWeatherByCityAsync to {@city} saved in cache",city);
           
         }
         return weatherData;
@@ -81,6 +89,7 @@ public class WeatherService
         var cachedWeatherData = await _redisDatabase.StringGetAsync("all_cities");
         if (cachedWeatherData.HasValue)
         {
+            _logger.LogInformation("GetAllCitiesAsync got from cache");
             return BsonSerializer.Deserialize<List<WeatherData>>(cachedWeatherData.ToString());
         }
 
@@ -89,6 +98,7 @@ public class WeatherService
 
         if (weatherDataList != null && weatherDataList.Count > 0)
         {
+            _logger.LogInformation("GetAllCitiesAsync saved to cache");
             await _redisDatabase.StringSetAsync("all_cities", weatherDataList.ToJson(), TimeSpan.FromMinutes(30)); // Кэш на 30 минут
         }
 
