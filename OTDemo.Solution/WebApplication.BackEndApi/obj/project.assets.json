@@ -2833,32 +2833,41 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MSI\\.nuget\\packages\\": {}
+    "C:\\Users\\Bulat\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
+      "projectUniqueName": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
       "projectName": "WebApplication.BackEndApi",
-      "projectPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
-      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\obj\\",
+      "projectPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
+      "packagesPath": "C:\\Users\\Bulat\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Bulat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://kznnuget.molot.ru/nexus/repository/WmNuget/": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj": {
-              "projectPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj"
+            "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj": {
+              "projectPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj"
             }
           }
         }
@@ -2918,6 +2927,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.1, 8.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.1, 8.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.1, 8.0.1]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.1, 8.0.1]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2926,8 +2953,318 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.4.24267.66/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.2.24157.14/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Driver' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Driver'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Driver"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Driver' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Driver'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Driver"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Serilog' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Serilog'&semVerLevel=2.0.0'.",
+      "libraryId": "Serilog"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Serilog' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Serilog'&semVerLevel=2.0.0'.",
+      "libraryId": "Serilog"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MassTransit.RabbitMQ' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MassTransit.RabbitMQ'&semVerLevel=2.0.0'.",
+      "libraryId": "MassTransit.RabbitMQ"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MassTransit.RabbitMQ' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MassTransit.RabbitMQ'&semVerLevel=2.0.0'.",
+      "libraryId": "MassTransit.RabbitMQ"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'StackExchange.Redis' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='StackExchange.Redis'&semVerLevel=2.0.0'.",
+      "libraryId": "StackExchange.Redis"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'StackExchange.Redis' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='StackExchange.Redis'&semVerLevel=2.0.0'.",
+      "libraryId": "StackExchange.Redis"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Serilog.AspNetCore' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Serilog.AspNetCore'&semVerLevel=2.0.0'.",
+      "libraryId": "Serilog.AspNetCore"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Serilog.AspNetCore' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Serilog.AspNetCore'&semVerLevel=2.0.0'.",
+      "libraryId": "Serilog.AspNetCore"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MassTransit' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MassTransit'&semVerLevel=2.0.0'.",
+      "libraryId": "MassTransit"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MassTransit' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MassTransit'&semVerLevel=2.0.0'.",
+      "libraryId": "MassTransit"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Bson' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Bson'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Bson"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Bson' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Bson'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Bson"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Driver.Core' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Driver.Core'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Driver.Core"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Driver.Core' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Driver.Core'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Driver.Core"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Libmongocrypt' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Libmongocrypt'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Libmongocrypt"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MongoDB.Libmongocrypt' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MongoDB.Libmongocrypt'&semVerLevel=2.0.0'.",
+      "libraryId": "MongoDB.Libmongocrypt"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'AWSSDK.SecurityToken' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='AWSSDK.SecurityToken'&semVerLevel=2.0.0'.",
+      "libraryId": "AWSSDK.SecurityToken"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'AWSSDK.SecurityToken' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='AWSSDK.SecurityToken'&semVerLevel=2.0.0'.",
+      "libraryId": "AWSSDK.SecurityToken"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Snappier' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Snappier'&semVerLevel=2.0.0'.",
+      "libraryId": "Snappier"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Snappier' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Snappier'&semVerLevel=2.0.0'.",
+      "libraryId": "Snappier"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'ZstdSharp.Port' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='ZstdSharp.Port'&semVerLevel=2.0.0'.",
+      "libraryId": "ZstdSharp.Port"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'ZstdSharp.Port' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='ZstdSharp.Port'&semVerLevel=2.0.0'.",
+      "libraryId": "ZstdSharp.Port"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'AWSSDK.Core' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='AWSSDK.Core'&semVerLevel=2.0.0'.",
+      "libraryId": "AWSSDK.Core"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'AWSSDK.Core' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='AWSSDK.Core'&semVerLevel=2.0.0'.",
+      "libraryId": "AWSSDK.Core"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MassTransit.Abstractions' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MassTransit.Abstractions'&semVerLevel=2.0.0'.",
+      "libraryId": "MassTransit.Abstractions"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'MassTransit.Abstractions' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='MassTransit.Abstractions'&semVerLevel=2.0.0'.",
+      "libraryId": "MassTransit.Abstractions"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Serilog.Settings.Configuration' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Serilog.Settings.Configuration'&semVerLevel=2.0.0'.",
+      "libraryId": "Serilog.Settings.Configuration"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Serilog.Settings.Configuration' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Serilog.Settings.Configuration'&semVerLevel=2.0.0'.",
+      "libraryId": "Serilog.Settings.Configuration"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.Extensions.DependencyModel' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Microsoft.Extensions.DependencyModel'&semVerLevel=2.0.0'.",
+      "libraryId": "Microsoft.Extensions.DependencyModel"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.Extensions.DependencyModel' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Microsoft.Extensions.DependencyModel'&semVerLevel=2.0.0'.",
+      "libraryId": "Microsoft.Extensions.DependencyModel"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'System.Text.Json' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='System.Text.Json'&semVerLevel=2.0.0'.",
+      "libraryId": "System.Text.Json"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'System.Text.Json' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='System.Text.Json'&semVerLevel=2.0.0'.",
+      "libraryId": "System.Text.Json"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore.Swagger' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore.Swagger'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore.Swagger"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore.Swagger' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore.Swagger'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore.Swagger"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore.SwaggerGen' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore.SwaggerGen'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerGen"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore.SwaggerGen' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore.SwaggerGen'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerGen"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore.SwaggerUI' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore.SwaggerUI'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerUI"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Swashbuckle.AspNetCore.SwaggerUI' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Swashbuckle.AspNetCore.SwaggerUI'&semVerLevel=2.0.0'.",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerUI"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.OpenApi' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Microsoft.OpenApi'&semVerLevel=2.0.0'.",
+      "libraryId": "Microsoft.OpenApi"
+    },
+    {
+      "code": "NU1801",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Failed to retrieve information about 'Microsoft.OpenApi' from remote source 'https://kznnuget.molot.ru/nexus/repository/WmNuget/FindPackagesById()?id='Microsoft.OpenApi'&semVerLevel=2.0.0'.",
+      "libraryId": "Microsoft.OpenApi"
+    }
+  ]
 }

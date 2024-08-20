@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "eOsDuWKn/fIwoJDfhx8N8018ss8fj7Y3xLkXWcD/m1Q=",
+  "Hash": "jun/UjomqOwLwij/y/CtWybIxR9I2nXShlzuQN4ogd0=",
   "Source": "WebApplication.BackEndApi",
   "BasePath": "_content/WebApplication.BackEndApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

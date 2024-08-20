@@ -1,26 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj": {}
+    "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj": {}
   },
   "projects": {
-    "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj": {
+    "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj",
+        "projectUniqueName": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj",
         "projectName": "Weather.Libs",
-        "projectPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj",
-        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\obj\\",
+        "projectPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj",
+        "packagesPath": "C:\\Users\\Bulat\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Bulat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kznnuget.molot.ru/nexus/repository/WmNuget/": {}
         },
         "frameworks": {
           "net8.0": {
@@ -63,39 +71,61 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.1, 8.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.1, 8.0.1]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.1, 8.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.4.24267.66/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.2.24157.14/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj": {
+    "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
+        "projectUniqueName": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
         "projectName": "WebApplication.BackEndApi",
-        "projectPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
-        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\obj\\",
+        "projectPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\WebApplication.BackEndApi.csproj",
+        "packagesPath": "C:\\Users\\Bulat\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\WebApplication.BackEndApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Bulat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kznnuget.molot.ru/nexus/repository/WmNuget/": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj": {
-                "projectPath": "C:\\Work\\.net\\OTDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj"
+              "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj": {
+                "projectPath": "C:\\Projects\\MyGit\\OTDemo\\OpenTelemetryDemo\\OTDemo.Solution\\Weather.Libs\\Weather.Libs.csproj"
               }
             }
           }
@@ -155,6 +185,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.1, 8.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.1, 8.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.1, 8.0.1]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.1, 8.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -163,7 +211,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.4.24267.66/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.2.24157.14/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
