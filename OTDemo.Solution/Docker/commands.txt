@@ -3,3 +3,4 @@ docker-compose -f docker-compose-rabbitmq-only.yml up -d
 http://localhost:15672 - rbtmq console
 docker-compose -f docker-compose-mongodb-only.yml up -d
 http://localhost:8081 admin pass
+docker-compose -f docker-compose-prometheus-only.yml up -d

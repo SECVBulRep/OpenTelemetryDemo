@@ -5,9 +5,19 @@ services:
     restart: always
     ports:
       - '6379:6379'
-    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    command: redis-server --save 20 1 --loglevel warning
     volumes:
       - cache:/data
+  
+  redis_exporter:
+    image: oliver006/redis_exporter:latest
+    ports:
+      - '9121:9121'
+    environment:
+      - REDIS_ADDR=redis://cache:6379      
+    depends_on:
+      - cache
+      
 volumes:
   cache:
     driver: local
