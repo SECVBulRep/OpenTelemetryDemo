@@ -11,3 +11,15 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets: ['host.docker.internal:5232']
+  
+  - job_name: 'otel-collector'
+    scrape_interval: 1s
+    scheme: http
+    static_configs:
+      - targets: [ 'otel-collector:8888' ]
+  
+  - job_name: 'otel-collector-exporters'
+    scrape_interval: 1s
+    scheme: http
+    static_configs:
+        - targets: [ 'otel-collector:8889' ]

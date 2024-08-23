@@ -3,6 +3,7 @@
 using MassTransit;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Serilog;
 using Weather.Libs.Metrics;
 using WebApplication.FrontApi;
@@ -52,7 +53,18 @@ builder.Services.AddOpenTelemetry()
             .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Weather_forecast_service"))
             .AddMeter(WeatherMetrics.InstrumentSourceName)
             .AddInstrumentation<WeatherMetrics>()
-            .AddPrometheusExporter();
+            //.AddPrometheusExporter()
+            .AddOtlpExporter(op =>
+            {
+                op.Endpoint = new Uri("http://localhost:4317");
+                op.BatchExportProcessorOptions = new BatchExportActivityProcessorOptions()
+                {
+                    MaxQueueSize = 2048,      // Максимальный размер очереди
+                    ScheduledDelayMilliseconds = 1000, // Интервал отправки (5 секунд)
+                    ExporterTimeoutMilliseconds = 1000, // Таймаут экспорта (30 секунд)
+                    MaxExportBatchSize = 512  // Максимальный размер пакета данных
+                };
+            });
     });
 
 
@@ -65,7 +77,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseOpenTelemetryPrometheusScrapingEndpoint("metrics");
+//app.UseOpenTelemetryPrometheusScrapingEndpoint("metrics");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

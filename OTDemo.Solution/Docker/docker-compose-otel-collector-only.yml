@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+
+  otel-collector:
+    image: otel/opentelemetry-collector:0.77.0
+    command: ["--config=/etc/otel-collector-config.yml"]
+    volumes:
+      - ./otel-collector-config.yml:/etc/otel-collector-config.yml
+    ports:
+      - "1888:1888"   # Этот порт используется для отладки и профилирования производительности самого OpenTelemetry Collector с помощью расширения pprof.
+      - "8888:8888"   # На этом порту OpenTelemetry Collector экспонирует свои собственные метрики в формате, совместимом с Prometheus. http://localhost:8888/metrics
+      - "8889:8889"   # Этот порт используется для экспорта собранных метрик (например, из приложений, отправляющих метрики через OTLP) в формате, который понимает Prometheus. http://localhost:8889/metrics
+      - "13133:13133" # health_check extension http://localhost:13133/
+      - "4317:4317"   # OTLP gRPC receiver
