@@ -4,3 +4,6 @@ http://localhost:15672 - rbtmq console
 docker-compose -f docker-compose-mongodb-only.yml up -d
 http://localhost:8081 admin pass
 docker-compose -f docker-compose-prometheus-only.yml up -d
+
+dotnet tool update -g dotnet-counters
+dotnet-counters monitor -n FrontEnd -counters MyMetrics
