@@ -1,0 +1,13 @@
+global:
+  scrape_interval:     30s
+  evaluation_interval: 60s
+
+rule_files:
+  - "./rules/*.yml"
+
+scrape_configs:
+  - job_name: 'fron-app'
+    scrape_interval: 1s
+    scheme: http
+    static_configs:
+      - targets: ['host.docker.internal:5232']
