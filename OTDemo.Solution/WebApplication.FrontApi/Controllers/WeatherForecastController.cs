@@ -2,8 +2,9 @@ using System.Diagnostics;
 using System.Net;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using Weather.Libs.Metrics;
 using Weather.Libs.Models;
-using WebApplication.FrontApi.Metrics;
+
 
 namespace WebApplication.FrontApi.Controllers;
 
@@ -35,6 +36,7 @@ public class WeatherForecastController : ControllerBase
     public async Task<List<WeatherData>?> GetAll()
     {
         using var activity = _activitySource.StartActivity(nameof(GetAll));
+        _metrics.SummaryRequestByCityCounter.Add(1,new KeyValuePair<string, object?>("city","all"));
         var result = await _weatherApiService.GetAllCitiesAsync();
         return result;
     }
@@ -43,6 +45,7 @@ public class WeatherForecastController : ControllerBase
     public async Task<List<WeatherData>?> GetAllEventually()
     {
         using var activity = _activitySource.StartActivity(nameof(GetAllEventually));
+        _metrics.SummaryRequestByCityCounter.Add(1,new KeyValuePair<string, object?>("city","all"));
         var response = await _client.GetResponse<GetAllCitiesResponse>(new GetAllCitiesRequest());
         return response.Message.Data;
     }
@@ -58,7 +61,7 @@ public class WeatherForecastController : ControllerBase
             WeatherData? result = await _weatherApiService.GetWeatherByCityAsync(city);
             activity?.AddEvent(new ActivityEvent($"weather for {city} is ready"));
             
-            _metrics.SummaryRequestCounter.Add(1,new KeyValuePair<string, object?>("city",result.City));
+            _metrics.SummaryRequestByCityCounter.Add(1,new KeyValuePair<string, object?>("city",result.City));
             _metrics.SetWeather(result!);
             
             return result;

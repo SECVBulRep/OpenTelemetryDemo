@@ -1,9 +1,12 @@
 
 
 using MassTransit;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
 using Serilog;
+using Weather.Libs.Metrics;
 using WebApplication.FrontApi;
-using WebApplication.FrontApi.Metrics;
+
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
@@ -28,6 +31,7 @@ builder.Services.AddHttpClient("WeatherApiClient", client =>
 builder.Services.AddScoped<IWeatherApiService, WeatherApiService>();
 builder.Services.AddSingleton<MyMetrics>();
 
+
 builder.Services.AddMassTransit(x =>
 {
     x.UsingRabbitMq((context,cfg) =>
@@ -41,6 +45,27 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resourceBuilder => resourceBuilder
+        .AddService(MyMetrics.ApplicationName, serviceInstanceId: Environment.MachineName)
+        .AddAttributes(new Dictionary<string, object>
+        {
+            ["EnvironmentName"] = MyMetrics.GlobalSystemName
+        })
+    )
+    .WithMetrics(providerBuilder => providerBuilder
+        .AddMeter(MyMetrics.InstrumentSourceName)
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+        .AddRuntimeInstrumentation()
+        .AddProcessInstrumentation()
+        .AddPrometheusExporter(opt =>
+        {
+            
+        })
+    );
+
+
 
 var app = builder.Build();
 
@@ -52,6 +77,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseOpenTelemetryPrometheusScrapingEndpoint();
+
 
 app.UseAuthorization();
 

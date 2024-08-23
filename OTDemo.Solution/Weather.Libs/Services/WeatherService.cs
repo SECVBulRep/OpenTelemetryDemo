@@ -21,7 +21,7 @@ public class WeatherService
         var database = client.GetDatabase("WeatherDb");
         _weatherCollection = database.GetCollection<WeatherData>("WeatherData");
 
-        var redis = ConnectionMultiplexer.Connect("localhost:6379,password=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81");
+        var redis = ConnectionMultiplexer.Connect("localhost:6379");
         _redisDatabase = redis.GetDatabase();
     }
 
