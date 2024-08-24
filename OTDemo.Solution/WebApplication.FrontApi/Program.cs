@@ -1,7 +1,9 @@
 
 
 using MassTransit;
+using OpenTelemetry.Instrumentation.AspNetCore;
 using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
 using Serilog;
 using Weather.Libs.Metrics;
 using WebApplication.FrontApi;
@@ -35,7 +37,7 @@ builder.Services.AddMassTransit(x =>
     {
         cfg.Host("localhost", "/", h => {
             h.Username("guest");
-            h.Password("guest");
+            h.Password("guest"); 
         });
 
         cfg.ConfigureEndpoints(context);
@@ -44,6 +46,19 @@ builder.Services.AddMassTransit(x =>
 
 
 builder.Services.AddOpenTelemetry()
+    .WithTracing(tracerProviderBuilder =>
+    {
+        tracerProviderBuilder
+            .AddSource(WeatherMetrics.ApplicationName)
+            .SetSampler(new AlwaysOnSampler())
+            .AddHttpClientInstrumentation()
+            .AddAspNetCoreInstrumentation();
+        
+        tracerProviderBuilder.AddOtlpExporter(otlpOptions =>
+        {
+            otlpOptions.Endpoint = new Uri("http://localhost:4317");
+        });
+    })
     .WithMetrics(builder =>
     {
         builder

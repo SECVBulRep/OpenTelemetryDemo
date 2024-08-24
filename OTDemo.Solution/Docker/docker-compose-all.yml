@@ -64,6 +64,17 @@ services:
     volumes:
       - cache:/data
   
+  tempo:
+    image: grafana/tempo:latest
+    command: [ "-config.file=/etc/tempo.yaml" ]
+    volumes:
+      - ./tempo.yaml:/etc/tempo.yaml
+      - ./tempo-data:/tmp/tempo
+    ports:
+      - "3200"  # tempo
+      - "4317"  # otlp grpc
+      - "4318"  # otlp http
+  
   grafana:
     image: grafana/grafana:9.3.2
     volumes:
