@@ -2,6 +2,7 @@
 
 using MassTransit;
 using Serilog;
+using Weather.Libs.Metrics;
 using WebApplication.FrontApi;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
@@ -25,7 +26,7 @@ builder.Services.AddHttpClient("WeatherApiClient", client =>
 });
 
 builder.Services.AddScoped<IWeatherApiService, WeatherApiService>();
-
+builder.Services.AddSingleton<WeatherMetrics>();
 
 builder.Services.AddMassTransit(x =>
 {
