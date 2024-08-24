@@ -2,6 +2,13 @@ receivers:
   otlp:
     protocols:
       grpc:
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'redis'
+          scrape_interval: 5s
+          static_configs:
+            - targets: [ 'redis_exporter:9121' ]
 
 exporters:
   prometheus:
@@ -22,5 +29,11 @@ service:
   #extensions: [pprof, zpages, health_check]
   pipelines:
     metrics:
-      receivers: [otlp]
+      receivers: [otlp,prometheus]
       exporters: [prometheus]
+
+#Объяснение:
+#receivers.prometheus: Мы добавили приемник prometheus, который будет скрейпить метрики с Redis Exporter.
+#config.scrape_configs: Внутри prometheus приемника, мы определяем scrape_configs как это делается в Prometheus. Это указывает OpenTelemetry Collector на то, что нужно собирать метрики с указанного целевого сервиса (в данном случае, с Redis Exporter).
+#service.pipelines.metrics: Мы включаем оба приемника (otlp и prometheus) в метрики pipeline, чтобы Collector мог обрабатывать данные от обоих источников.
+

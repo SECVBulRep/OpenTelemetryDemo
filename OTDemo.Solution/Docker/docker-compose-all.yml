@@ -42,6 +42,15 @@ services:
     volumes:
       - cache:/data
   
+  redis_exporter:
+    image: oliver006/redis_exporter:latest
+    ports:
+      - '9121:9121'
+    environment:
+      - REDIS_ADDR=redis://cache:6379      
+    depends_on:
+      - cache
+  
   otel-collector:
     image: otel/opentelemetry-collector:0.77.0
     command: [ "--config=/etc/otel-collector-config.yml" ]
@@ -58,6 +67,7 @@ services:
       - rabbitmq
       - mongo-express
       - mongo
+      - redis_exporter  
   
   prometheus:
     image: prom/prometheus:latest
