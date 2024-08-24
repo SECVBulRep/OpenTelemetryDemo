@@ -1,0 +1,19 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+exporters:  
+  prometheus:
+    endpoint: ":9201"
+    send_timestamps: true
+    metric_expiration: 180m
+    enable_open_metrics: true
+  
+
+service:
+  pipelines:    
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus]

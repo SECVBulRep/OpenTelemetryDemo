@@ -61,7 +61,7 @@ public class WeatherForecastController : ControllerBase
             WeatherData? result = await _weatherApiService.GetWeatherByCityAsync(city);
             activity?.AddEvent(new ActivityEvent($"weather for {city} is ready"));
             
-            _metrics.SummaryRequestByCityCounter.Add(1,new KeyValuePair<string, object?>("city",result.City));
+            _metrics.SummaryRequestByCityCounter.Add(1,new KeyValuePair<string, object?>("city",result?.City));
             _metrics.SetWeather(result!);
             
             return result;
