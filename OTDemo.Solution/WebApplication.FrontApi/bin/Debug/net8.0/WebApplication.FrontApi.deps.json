@@ -14,6 +14,7 @@
           "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
           "OpenTelemetry.Instrumentation.Http": "1.9.0",
           "OpenTelemetry.Instrumentation.Runtime": "1.9.0",
+          "OpenTelemetry.Instrumentation.StackExchangeRedis": "1.9.0-beta.1",
           "Serilog": "4.0.1",
           "Serilog.AspNetCore": "8.0.2",
           "Serilog.Sinks.Console": "6.0.0",
@@ -425,6 +426,20 @@
           }
         }
       },
+      "OpenTelemetry.Instrumentation.StackExchangeRedis/1.9.0-beta.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "8.0.0",
+          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.9.0",
+          "StackExchange.Redis": "2.8.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "runtime": {
+          "lib/net6.0/OpenTelemetry.Instrumentation.StackExchangeRedis.dll": {
+            "assemblyVersion": "1.9.0.97",
+            "fileVersion": "1.9.0.97"
+          }
+        }
+      },
       "Pipelines.Sockets.Unofficial/2.2.8": {
         "dependencies": {
           "System.IO.Pipelines": "5.0.1"
@@ -628,6 +643,7 @@
       "System.Diagnostics.DiagnosticSource/8.0.0": {},
       "System.IO.Pipelines/5.0.1": {},
       "System.Memory/4.5.5": {},
+      "System.Reflection.Emit.Lightweight/4.7.0": {},
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
       "System.Security.AccessControl/5.0.0": {
         "dependencies": {
@@ -975,6 +991,13 @@
       "path": "opentelemetry.instrumentation.runtime/1.9.0",
       "hashPath": "opentelemetry.instrumentation.runtime.1.9.0.nupkg.sha512"
     },
+    "OpenTelemetry.Instrumentation.StackExchangeRedis/1.9.0-beta.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-26j0TmtmC2s/hnW31/e+12/KGtPryB9nIRwrgEjF4nFAKn0MC2Fl1M25cXZMgkNodP3x4dUfoUgac/AGYrst4w==",
+      "path": "opentelemetry.instrumentation.stackexchangeredis/1.9.0-beta.1",
+      "hashPath": "opentelemetry.instrumentation.stackexchangeredis.1.9.0-beta.1.nupkg.sha512"
+    },
     "Pipelines.Sockets.Unofficial/2.2.8": {
       "type": "package",
       "serviceable": true,
@@ -1128,6 +1151,13 @@
       "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
       "path": "system.memory/4.5.5",
       "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",

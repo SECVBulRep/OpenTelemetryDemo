@@ -1,5 +1,9 @@
 using MassTransit;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Serilog;
+using StackExchange.Redis;
+using Weather.Libs.Metrics;
 using Weather.Libs.Services;
 using WebApplication.BackEndApi;
 using WebApplication.BackEndApi.Consumers;
@@ -38,6 +42,34 @@ builder.Services.AddMassTransit(x =>
         
     });
 });
+
+
+var redisConnection = ConnectionMultiplexer.Connect("localhost:6379");
+builder.Services.AddSingleton<IConnectionMultiplexer>(redisConnection);
+
+
+builder.Services.AddOpenTelemetry()
+    .WithTracing(tracerProviderBuilder =>
+    {
+        tracerProviderBuilder
+            .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("BackEndService"))
+            .AddSource("BackEndService")
+            .SetSampler(new AlwaysOnSampler())
+            .AddHttpClientInstrumentation()
+            .AddAspNetCoreInstrumentation()
+            .AddRedisInstrumentation(redisConnection, opt =>
+        {
+            opt.Enrich = (activity, command) => activity.SetTag("redis.connection", "localhost:6379");
+            opt.Enrich = (activity, command) => activity.SetTag("peer.service", "redis");
+            opt.FlushInterval = TimeSpan.FromSeconds(1);
+            opt.EnrichActivityWithTimingEvents = true;
+        });
+
+        tracerProviderBuilder.AddOtlpExporter(otlpOptions =>
+        {
+            otlpOptions.Endpoint = new Uri("http://localhost:4317");
+        });
+    });
 
 var app = builder.Build();
 
