@@ -14,13 +14,14 @@ public class WeatherService
     private ILogger<WeatherService> _logger;
     private readonly IMongoCollection<WeatherData> _weatherCollection;
     private readonly IDatabase _redisDatabase;
+    private readonly MongoClient _mongoClient;
    
-    public WeatherService(ILogger<WeatherService> logger, IConnectionMultiplexer connectionMultiplexer)
+    public WeatherService(ILogger<WeatherService> logger, IConnectionMultiplexer connectionMultiplexer, MongoClient mongoClient)
     {
         _logger = logger;
-        var client = new MongoClient("mongodb://admin:adminpassword@localhost:27017");
+        _mongoClient = mongoClient;
         
-        var database = client.GetDatabase("WeatherDb");
+        var database = _mongoClient.GetDatabase("WeatherDb");
         _weatherCollection = database.GetCollection<WeatherData>("WeatherData");
         _redisDatabase = connectionMultiplexer.GetDatabase();
     }

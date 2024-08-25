@@ -9,6 +9,7 @@
       "WebApplication.BackEndApi/1.0.0": {
         "dependencies": {
           "MassTransit.RabbitMQ": "8.2.4",
+          "MongoDB.Driver.Core.Extensions.DiagnosticSources": "1.5.0",
           "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.9.0",
           "OpenTelemetry.Extensions.Hosting": "1.9.0",
           "OpenTelemetry.Instrumentation.AspNetCore": "1.9.0",
@@ -301,6 +302,18 @@
           "lib/netstandard2.1/MongoDB.Driver.Core.dll": {
             "assemblyVersion": "2.28.0.0",
             "fileVersion": "2.28.0.0"
+          }
+        }
+      },
+      "MongoDB.Driver.Core.Extensions.DiagnosticSources/1.5.0": {
+        "dependencies": {
+          "MongoDB.Driver.Core": "2.28.0",
+          "System.Diagnostics.DiagnosticSource": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MongoDB.Driver.Core.Extensions.DiagnosticSources.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -927,6 +940,13 @@
       "sha512": "sha512-Ek5cjiN9FwBsTdJnLouOsKWjplr4D+8fs9urOhzBKZLygOsgIxTDLzpoHC3Mg4bJ1V/Mbz0/xXr0KqUXdmzqEg==",
       "path": "mongodb.driver.core/2.28.0",
       "hashPath": "mongodb.driver.core.2.28.0.nupkg.sha512"
+    },
+    "MongoDB.Driver.Core.Extensions.DiagnosticSources/1.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WF7IwEoi8vOkwvxWfF7mxCXZIEHF8grCfC7JCO17BmV7epzj0UEQmdwmxJKaEuCytTxwPYLdRwaU2lZd3Vn3AA==",
+      "path": "mongodb.driver.core.extensions.diagnosticsources/1.5.0",
+      "hashPath": "mongodb.driver.core.extensions.diagnosticsources.1.5.0.nupkg.sha512"
     },
     "MongoDB.Libmongocrypt/1.11.0": {
       "type": "package",

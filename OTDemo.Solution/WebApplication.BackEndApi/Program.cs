@@ -1,4 +1,6 @@
 using MassTransit;
+using MongoDB.Driver;
+using MongoDB.Driver.Core.Extensions.DiagnosticSources;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Serilog;
@@ -48,6 +50,13 @@ var redisConnection = ConnectionMultiplexer.Connect("localhost:6379");
 builder.Services.AddSingleton<IConnectionMultiplexer>(redisConnection);
 
 
+var clientSettings = MongoClientSettings.FromConnectionString("mongodb://admin:adminpassword@localhost:27017"); 
+var options = new InstrumentationOptions { CaptureCommandText = true };
+clientSettings.ClusterConfigurator = cb => cb.Subscribe(new DiagnosticsActivityEventSubscriber(options));
+MongoClient mongoClient = new MongoClient(clientSettings);
+
+builder.Services.AddSingleton<MongoClient>(mongoClient);
+
 builder.Services.AddOpenTelemetry()
     .WithTracing(tracerProviderBuilder =>
     {
@@ -57,6 +66,7 @@ builder.Services.AddOpenTelemetry()
             .SetSampler(new AlwaysOnSampler())
             .AddHttpClientInstrumentation()
             .AddAspNetCoreInstrumentation()
+            .AddSource("MongoDB.Driver.Core.Extensions.DiagnosticSources")
             .AddRedisInstrumentation(redisConnection, opt =>
         {
             opt.Enrich = (activity, command) => activity.SetTag("redis.connection", "localhost:6379");
