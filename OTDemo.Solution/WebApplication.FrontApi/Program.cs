@@ -2,6 +2,7 @@
 
 using System.Reflection;
 using MassTransit;
+using MassTransit.Logging;
 using OpenTelemetry.Instrumentation.AspNetCore;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -55,6 +56,7 @@ builder.Services.AddOpenTelemetry()
         tracerProviderBuilder
             .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("FrontEndService"))
             .AddSource("FrontEndService")
+            .AddSource(DiagnosticHeaders.DefaultListenerName)
             .SetSampler(new AlwaysOnSampler())
             .AddHttpClientInstrumentation()
             .AddAspNetCoreInstrumentation()

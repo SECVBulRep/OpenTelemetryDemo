@@ -1,4 +1,5 @@
 using MassTransit;
+using MassTransit.Logging;
 using MongoDB.Driver;
 using MongoDB.Driver.Core.Extensions.DiagnosticSources;
 using OpenTelemetry.Resources;
@@ -66,6 +67,7 @@ builder.Services.AddOpenTelemetry()
             .SetSampler(new AlwaysOnSampler())
             .AddHttpClientInstrumentation()
             .AddAspNetCoreInstrumentation()
+            .AddSource(DiagnosticHeaders.DefaultListenerName)
             .AddSource("MongoDB.Driver.Core.Extensions.DiagnosticSources")
             .AddRedisInstrumentation(redisConnection, opt =>
         {
