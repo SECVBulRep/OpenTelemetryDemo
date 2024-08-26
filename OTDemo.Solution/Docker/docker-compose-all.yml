@@ -3,7 +3,7 @@ version: '3.8'
 services:
   
   otel-collector:
-    image: otel/opentelemetry-collector:0.70.0
+    image: otel/opentelemetry-collector:latest
     command: [ "--config=/etc/otel-collector.yaml" ]
     volumes:
       - ./otel-collector.yaml:/etc/otel-collector.yaml
