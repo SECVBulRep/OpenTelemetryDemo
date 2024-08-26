@@ -3,7 +3,7 @@ version: '3.8'
 services:
   
   otel-collector:
-    image: otel/opentelemetry-collector:latest
+    image: otel/opentelemetry-collector-contrib:latest
     command: [ "--config=/etc/otel-collector.yaml" ]
     volumes:
       - ./otel-collector.yaml:/etc/otel-collector.yaml
@@ -11,6 +11,16 @@ services:
       - "4317:4317"
       - "4318:4318"
       - "9201:9201"
+  
+  loki:
+    image: grafana/loki:2.9.2
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./tmp/loki:/loki/
+      - ./loki-config.yml:/etc/loki/local-config.yaml:ro
+    command: -config.file=/etc/loki/local-config.yaml
+  
   
   prometheus:
     image: prom/prometheus:latest

@@ -5,6 +5,7 @@ using MongoDB.Driver.Core.Extensions.DiagnosticSources;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Serilog;
+using Serilog.Sinks.OpenTelemetry;
 using StackExchange.Redis;
 using Weather.Libs.Metrics;
 using Weather.Libs.Services;
@@ -14,9 +15,22 @@ using WebApplication.BackEndApi.Consumers;
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
 
+
 Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
     .WriteTo.Console()
+    .WriteTo.OpenTelemetry(options =>
+    {
+        options.Endpoint = "http://localhost:4317/v1/logs";
+        options.Protocol = OtlpProtocol.Grpc;
+        options.IncludedData = IncludedData.TraceIdField | IncludedData.SpanIdField ;
+        options.ResourceAttributes = new Dictionary<string, object>
+        {
+            {"service.name", AppDomain.CurrentDomain.FriendlyName}
+        };
+
+    })
+    
     .CreateLogger();
 
 builder.Services.AddSerilog();

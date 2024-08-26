@@ -18,6 +18,7 @@
           "Serilog": "4.0.1",
           "Serilog.AspNetCore": "8.0.2",
           "Serilog.Sinks.Console": "6.0.0",
+          "Serilog.Sinks.OpenTelemetry": "4.1.0-dev-00336",
           "Swashbuckle.AspNetCore": "6.7.2",
           "Weather.Libs": "1.0.0"
         },
@@ -55,45 +56,42 @@
           }
         }
       },
-      "Google.Protobuf/3.22.5": {
+      "Google.Protobuf/3.26.1": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
-            "assemblyVersion": "3.22.5.0",
-            "fileVersion": "3.22.5.0"
+            "assemblyVersion": "3.26.1.0",
+            "fileVersion": "3.26.1.0"
           }
         }
       },
-      "Grpc.Core.Api/2.52.0": {
-        "dependencies": {
-          "System.Memory": "4.5.5"
-        },
+      "Grpc.Core.Api/2.62.0": {
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.52.0.0"
+            "fileVersion": "2.62.0.0"
           }
         }
       },
-      "Grpc.Net.Client/2.52.0": {
+      "Grpc.Net.Client/2.62.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.52.0",
+          "Grpc.Net.Common": "2.62.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
         },
         "runtime": {
-          "lib/net7.0/Grpc.Net.Client.dll": {
+          "lib/net8.0/Grpc.Net.Client.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.52.0.0"
+            "fileVersion": "2.62.0.0"
           }
         }
       },
-      "Grpc.Net.Common/2.52.0": {
+      "Grpc.Net.Common/2.62.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.52.0"
+          "Grpc.Core.Api": "2.62.0"
         },
         "runtime": {
-          "lib/net7.0/Grpc.Net.Common.dll": {
+          "lib/net8.0/Grpc.Net.Common.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.52.0.0"
+            "fileVersion": "2.62.0.0"
           }
         }
       },
@@ -367,8 +365,8 @@
       },
       "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.9.0": {
         "dependencies": {
-          "Google.Protobuf": "3.22.5",
-          "Grpc.Net.Client": "2.52.0",
+          "Google.Protobuf": "3.26.1",
+          "Grpc.Net.Client": "2.62.0",
           "Microsoft.Extensions.Configuration.Binder": "8.0.1",
           "OpenTelemetry": "1.9.0"
         },
@@ -573,6 +571,19 @@
           }
         }
       },
+      "Serilog.Sinks.OpenTelemetry/4.1.0-dev-00336": {
+        "dependencies": {
+          "Google.Protobuf": "3.26.1",
+          "Grpc.Net.Client": "2.62.0",
+          "Serilog": "4.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.OpenTelemetry.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
+        }
+      },
       "SharpCompress/0.30.1": {
         "runtime": {
           "lib/net5.0/SharpCompress.dll": {
@@ -711,33 +722,33 @@
       "path": "dnsclient/1.6.1",
       "hashPath": "dnsclient.1.6.1.nupkg.sha512"
     },
-    "Google.Protobuf/3.22.5": {
+    "Google.Protobuf/3.26.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tTMtDZPbLxJew8pk7NBdqhLqC4OipfkZdwPuCEUNr2AoDo1siUGcxFqJK0wDewTL8ge5Cjrb16CToMPxBUHMGA==",
-      "path": "google.protobuf/3.22.5",
-      "hashPath": "google.protobuf.3.22.5.nupkg.sha512"
+      "sha512": "sha512-CHZX8zXqhF/fdUtd+AYzew8T2HFkAoe5c7lbGxZY/qryAlQXckDvM5BfOJjXlMS7kyICqQTMszj4w1bX5uBJ/w==",
+      "path": "google.protobuf/3.26.1",
+      "hashPath": "google.protobuf.3.26.1.nupkg.sha512"
     },
-    "Grpc.Core.Api/2.52.0": {
+    "Grpc.Core.Api/2.62.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SQiPyBczG4vKPmI6Fd+O58GcxxDSFr6nfRAJuBDUNj+PgdokhjWJvZE/La1c09AkL2FVm/jrDloG89nkzmVF7A==",
-      "path": "grpc.core.api/2.52.0",
-      "hashPath": "grpc.core.api.2.52.0.nupkg.sha512"
+      "sha512": "sha512-q4Jj6bRZHNnE4CMLqgjiBUCKLit+tRr0simZsS2W6U++akd7CzXByeKy2tddqT68hFzP2XzceXA2YtBTfWtixA==",
+      "path": "grpc.core.api/2.62.0",
+      "hashPath": "grpc.core.api.2.62.0.nupkg.sha512"
     },
-    "Grpc.Net.Client/2.52.0": {
+    "Grpc.Net.Client/2.62.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hWVH9g/Nnjz40ni//2S8UIOyEmhueQREoZIkD0zKHEPqLxXcNlbp4eebXIOicZtkwDSx0TFz9NpkbecEDn6rBw==",
-      "path": "grpc.net.client/2.52.0",
-      "hashPath": "grpc.net.client.2.52.0.nupkg.sha512"
+      "sha512": "sha512-C7HxLt+wWPTpPFORRHkxxtDLL+K/jXSmZBaPLhFM8AEkN0bYjklIfCwnzajn1gcbRcEETBb0WnRgHJdVzpwbCg==",
+      "path": "grpc.net.client/2.62.0",
+      "hashPath": "grpc.net.client.2.62.0.nupkg.sha512"
     },
-    "Grpc.Net.Common/2.52.0": {
+    "Grpc.Net.Common/2.62.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-di9qzpdx525IxumZdYmu6sG2y/gXJyYeZ1ruFUzB9BJ1nj4kU1/dTAioNCMt1VLRvNVDqh8S8B1oBdKhHJ4xRg==",
-      "path": "grpc.net.common/2.52.0",
-      "hashPath": "grpc.net.common.2.52.0.nupkg.sha512"
+      "sha512": "sha512-eBv5I4RPWfdezGXqooU5hs3+XcfVMLk5XDlA4G/Nd9TMX78ZGrFl/lM1Ad187zgBLmH7WPAgfjKRWLBwaa1Wbw==",
+      "path": "grpc.net.common/2.62.0",
+      "hashPath": "grpc.net.common.2.62.0.nupkg.sha512"
     },
     "MassTransit/8.2.4": {
       "type": "package",
@@ -1074,6 +1085,13 @@
       "sha512": "sha512-uwV5hdhWPwUH1szhO8PJpFiahqXmzPzJT/sOijH/kFgUx+cyoDTMM8MHD0adw9+Iem6itoibbUXHYslzXsLEAg==",
       "path": "serilog.sinks.file/5.0.0",
       "hashPath": "serilog.sinks.file.5.0.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.OpenTelemetry/4.1.0-dev-00336": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jNsc6D7vUNBKow0Gse5BMS0N9R+uofVgPACjEzfwaUlPjvRGujmHPAQTLkV7m67ko2CdK0XW7pc/4SOLFk2mcA==",
+      "path": "serilog.sinks.opentelemetry/4.1.0-dev-00336",
+      "hashPath": "serilog.sinks.opentelemetry.4.1.0-dev-00336.nupkg.sha512"
     },
     "SharpCompress/0.30.1": {
       "type": "package",
