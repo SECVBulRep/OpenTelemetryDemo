@@ -80,7 +80,9 @@ public class WeatherService
             {
                 _logger.LogInformation("GetWeatherByCityAsync to {@city} got from cache", city);
                 var result = BsonSerializer.Deserialize<WeatherData>(cachedWeatherData.ToString());
-                _logger.LogInformation("weather by city {city} is {@result}", city, result);
+                _logger.LogInformation("weather by city {@city} is {@result}", city, result);
+                // _logger.LogInformation("ТЕСТ - {@result}",result);
+                // _logger.LogInformation("{@result}",result);
 
                 return result;
             }

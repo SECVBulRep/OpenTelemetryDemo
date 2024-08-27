@@ -10,7 +10,7 @@ processors:
     attributes:
       - action: insert
         key: loki.format
-        value: raw
+        value: json
       - action: insert
         key: loki.resource.labels
         value: service.name, app, runtime
@@ -44,5 +44,5 @@ service:
       exporters: [prometheus]
     logs:
       receivers: [ otlp ]
-      processors: [ batch, resource ]
+     # processors: [ batch, resource ]
       exporters: [ loki ]

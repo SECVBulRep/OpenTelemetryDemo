@@ -23,7 +23,7 @@ Log.Logger = new LoggerConfiguration()
     {
         options.Endpoint = "http://localhost:4317/v1/logs";
         options.Protocol = OtlpProtocol.Grpc;
-        options.IncludedData = IncludedData.TraceIdField | IncludedData.SpanIdField ;
+        options.IncludedData =  IncludedData.SpanIdField | IncludedData.TraceIdField;
         options.ResourceAttributes = new Dictionary<string, object>
         {
             {"service.name", AppDomain.CurrentDomain.FriendlyName}
@@ -98,6 +98,9 @@ builder.Services.AddOpenTelemetry()
     });
 
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
